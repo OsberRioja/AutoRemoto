@@ -10,6 +10,10 @@ function Auto(comando)
     {
         pos_final="0,1N"
     }
+    if(comando=="AA")
+    {
+        pos_final="0,2N";
+    }
     return pos_final;
 }
 
