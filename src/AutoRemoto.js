@@ -1,5 +1,7 @@
 function Superficie(cadena)
 {
-    return 0;
+    if(!cadena)
+        return 0;
+    return cadena;
 }
 export default Superficie;
