@@ -1,7 +1,7 @@
-function Superficie(cadena)
+function Auto(comando)
 {
-    if(!cadena)
-        return 0;
-    return cadena;
+    let pos_inicial="0,0N";
+    return pos_inicial;
 }
-export default Superficie;
+
+export default Auto;

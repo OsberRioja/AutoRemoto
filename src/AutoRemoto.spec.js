@@ -1,10 +1,7 @@
-import Superficie from "./AutoRemoto.js";
+import Auto from "./AutoRemoto.js";
 
-describe("AutoRemoto", () => {
-    it("cuando el piloto ingrese una cadena vacia se devolvera 0", () => {
-        expect(Superficie("")).toEqual(0);
-    });
-    it("cuando el piloto ingrese una cadena con el tamaño de la superficie se devuelve la misma cadena", () => {
-        expect(Superficie("5,5")).toEqual("5,5");
+describe("Avanzar una posicion con el comando A desde una posicion inicial por defecto (0,0)N y una tamaño de supericie por defecto (5,5)", () => {
+    it("Si el piloto no ingresa una cadena vacia se devuelve la posicion inicial sin cabios", () => {
+        expect(Auto("")).toEqual("0,0N");
     });
 });
