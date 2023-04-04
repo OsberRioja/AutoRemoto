@@ -10,4 +10,8 @@ describe("Avanzar una posicion con el comando A desde una posicion inicial por d
     it("Si se ingresan el comando AA se avanzaran 2 posiciones a partir de la posicion incial 0,0N", () => {
         expect(Auto("AA")).toEqual("0,2N");
     });
+    it("Si se ingresa una secuencia de comandos A se avanzaran las posiciones necesarias.", () => {
+        expect(Auto("AAAA")).toEqual("0,4N");
+    });
+
 });

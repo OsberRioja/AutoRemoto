@@ -1,20 +1,31 @@
-function Auto(comando)
+function Auto(cadena)
 {
-    let pos_inicial="0,0N";
-    let pos_final;
-    if(comando=="")
-    {
-        pos_final=pos_inicial;
+    let inicial_x=0;
+    let inicial_y=0;
+    let final_x=0;
+    let final_y=0;
+    let orientacion="N";
+    const filas = 5;
+    const columnas = 5;
+    const superficie = [];
+
+    //llenamos la matriz de superficie de 0
+    for (let i = 0; i < filas; i++) {
+        superficie[i] = [];
+        for (let j = 0; j < columnas; j++) {
+            superficie[i][j] = 0;
+        }
     }
-    if(comando=="A")
+    superficie[inicial_x][inicial_y]=1;//posicion inicial por defecto
+    let comandos=cadena.split("");
+    for(var i=0;i<comandos.length;i++)
     {
-        pos_final="0,1N"
+        superficie[final_x][final_y]=0;//pone en 0 la posicion anterior del auto
+        final_y++;                     //avanza una posicion el auto
+        superficie[final_x][final_y]=1;//pone en 1 la posicion actual del auto
     }
-    if(comando=="AA")
-    {
-        pos_final="0,2N";
-    }
-    return pos_final;
+    let posicion_final=final_x.toString()+","+final_y.toString()+orientacion;
+    return posicion_final;
 }
 
 export default Auto;
