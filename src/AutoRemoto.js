@@ -20,7 +20,7 @@ function Auto(cadena)
     let comandos=cadena.split("");
     for(var i=0;i<comandos.length;i++)
     {
-        if(final_x<filas-1 && final_y<columnas-1)
+        if(final_x<filas-1 && final_y<columnas-1)//verifica que este dentro de los limites
         {
             superficie[final_x][final_y]=0;//pone en 0 la posicion anterior del auto
             final_y++;                     //avanza una posicion el auto

@@ -1,26 +1,15 @@
-import sumar from "./sumador";
-import multiplicar from "./multiplicador.js";
+import Auto from "./AutoRemoto.js";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const form2 = document.querySelector("#multiplicar-form");
+const cadena_comandos = document.querySelector("#cadena-text");
+const form = document.querySelector("#ejecutar-form");
 const div = document.querySelector("#resultado-div");
-const div2 =document.querySelector("#resultado-div2");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  const cadena = cadena_comandos.value;
+  const posicion_inicial = "0,0N";
+  const posicion_final = Auto(cadena);
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
-});
-form2.addEventListener("submit", (event2) => {
-  event2.preventDefault();
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div2.innerHTML = "<p>" + multiplicar(firstNumber, secondNumber) + "</p>";
+  div.innerHTML = "<p> Posicion Inicial:" + posicion_inicial + "</p>" + "<p> Comandos:" + cadena + "</p>" + "<p> Posicion Final:" + posicion_final + "</p>";
 });
