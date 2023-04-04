@@ -20,9 +20,12 @@ function Auto(cadena)
     let comandos=cadena.split("");
     for(var i=0;i<comandos.length;i++)
     {
-        superficie[final_x][final_y]=0;//pone en 0 la posicion anterior del auto
-        final_y++;                     //avanza una posicion el auto
-        superficie[final_x][final_y]=1;//pone en 1 la posicion actual del auto
+        if(final_x<filas-1 && final_y<columnas-1)
+        {
+            superficie[final_x][final_y]=0;//pone en 0 la posicion anterior del auto
+            final_y++;                     //avanza una posicion el auto
+            superficie[final_x][final_y]=1;//pone en 1 la posicion actual del auto
+        }
     }
     let posicion_final=final_x.toString()+","+final_y.toString()+orientacion;
     return posicion_final;

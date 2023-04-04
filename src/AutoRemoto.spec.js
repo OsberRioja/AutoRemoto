@@ -13,5 +13,7 @@ describe("Avanzar una posicion con el comando A desde una posicion inicial por d
     it("Si se ingresa una secuencia de comandos A se avanzaran las posiciones necesarias.", () => {
         expect(Auto("AAAA")).toEqual("0,4N");
     });
-
+    it("Si se ingresa una secuencia que sobre pase los limites el auto debe detenerse en el limite", () => {
+        expect(Auto("AAAAAA")).toEqual("0,4N");
+    });
 });
