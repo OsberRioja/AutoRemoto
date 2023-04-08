@@ -22,7 +22,7 @@ COMO: Piloto del auto remoto
 QUIERO: ingresar los comandos I o D para girar el auto
 PARA: Tener un control del movimiento del auto
 Criterios de Confirmación:
--	Cuando el piloto ingrese el comando I o D se mostrará la posición final del auto con un giro a la Izquierda o a la Derecha según corresponda, mediante la letra N(norte), S(sur), E(este), O(oeste).
+-	Cuando el piloto ingrese el comando I o D se mostrará la posición final del auto con giros a la Izquierda o a la Derecha según corresponda, mediante la letra N(norte), S(sur), E(este), O(oeste).
 -	Si el usuario ingresa un carácter diferente a I o D se mostrará un mensaje de error.
 
 
