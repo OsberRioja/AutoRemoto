@@ -1,0 +1,61 @@
+HISTORIAS DE USUARIO:
+•	Avanzar una posición con el comando A desde una posición inicial y un tamaño de superficie por defectos
+•	Girar a la Izquierda o a la Derecha el auto con los comandos I y D
+•	Ingresar una serie de comandos y que se ejecuten en orden tomando en cuenta una posición inicial por defecto (0,0) N y un tamaño de la superficie de 5,5
+•	Ingresar una posición inicial para el auto
+•	Ingresar un tamaño para la superficie.
+
+
+Avanzar una posición con el comando A desde una posición inicial por defecto 0,0 N y un tamaño de superficie por defecto (5,5)
+COMO: Piloto del auto remoto
+QUIERO: ingresar el comando A en el campo de comandos y que el auto avance una posición
+PARA: controlar el movimiento del auto
+Criterios de confirmación:
+-	Cuando el piloto ingrese el comando A se devolverá la posición final de auto una posición más adelante.
+-	Si el piloto ingresa un carácter que no sea A se le mostrara un mensaje de error.
+
+
+
+
+Girar a la Izquierda o a la Derecha el auto con los comandos I o D
+COMO: Piloto del auto remoto
+QUIERO: ingresar los comandos I o D para girar el auto
+PARA: Tener un control del movimiento del auto
+Criterios de Confirmación:
+-	Cuando el piloto ingrese el comando I o D se mostrará la posición final del auto con un giro a la Izquierda o a la Derecha según corresponda, mediante la letra N(norte), S(sur), E(este), O(oeste).
+-	Si el usuario ingresa un carácter diferente a I o D se mostrará un mensaje de error.
+
+
+
+
+
+
+
+Ingresar una serie de comandos y que se ejecuten en orden tomando en cuenta una posición inicial por defecto (0,0) N y un tamaño de la superficie de 5,5
+COMO: Piloto del auto remoto
+QUIERO: ingresar una serie de comandos que se ejecuten en orden
+PARA: tener un control de los movimientos que debe realizar el auto y llevarlo a una posición determinada.
+Criterios de confirmación:
+-	Cuando el piloto ingrese una serie de comandos se mostrarán la posición inicial por defecto, los comandos ingresados, y la posición final del auto con respecto a la posición inicial y el tamaño de la superficie de (5,5).
+-	Si el piloto ingresa algún carácter distinto de A, I, D se mostrará un mensaje de error.
+-	Si el auto llega al limite de la superficie el auto no avanzara.
+
+
+
+Ingresar una posición inicial para el auto.
+COMO: Piloto del auto remoto
+QUIERO: ingresar una posición inicial para el auto distinta a la por defecto.
+PARA: ubicar el auto en la posición que requiera.
+Criterios de Confirmación:
+-	Cuando el piloto ingrese los comandos de movimientos precedidos por una posición inicial para el auto se mostrará la posición inicial ingresada por el piloto los comandos ingresados y la posición final del auto con respecto a la posición inicial previamente ingresada y el tamaño de la superficie por defecto de (5,5).
+-	El formato debe ser el siguiente: ejemplo: 0,2N/IAIAIAIAA. Si el piloto no ingresa en ese formato se mostrará un mensaje de error.
+
+
+
+Ingresar un tamaño para la superficie
+COMO: Piloto del auto remoto
+QUIERO: ingresar un tamaño de la superficie donde se moverá el auto
+PARA: poder controlar el espacio en donde se moverá el auto
+Criterios de Confirmación:
+-	Cuando el piloto ingrese un tamaño para la superficie, el auto podrá moverse dentro de los parámetros del mismo.
+-	El formato debe ser el siguiente: ejemplo: 5,5. Si el piloto no ingresa en ese formato se mostrará un mensaje de error.

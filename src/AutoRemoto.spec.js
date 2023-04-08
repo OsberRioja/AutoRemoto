@@ -17,3 +17,9 @@ describe("Avanzar una posicion con el comando A desde una posicion inicial por d
         expect(Auto("AAAAAA")).toEqual("0,4N");
     });
 });
+
+describe("Girar a la Izquierda o a la Derecha el auto con los comandos I o D", () => {
+    it("Si el piloto ingresa el comando I la posicion final del auto se mueve una vez a la izquierda", () => {
+        expect(Auto("I")).toEqual("0,0O");
+    });
+});
