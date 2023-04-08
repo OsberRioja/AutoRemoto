@@ -22,4 +22,7 @@ describe("Girar a la Izquierda o a la Derecha el auto con los comandos I o D", (
     it("Si el piloto ingresa el comando I la posicion final del auto se mueve una vez a la izquierda", () => {
         expect(Auto("I")).toEqual("0,0O");
     });
+    it("Si el piloto ingresa el comando mas de un comando I gira a la izquierda las veces necesarias veces a partir de la posicon 0,0N", () => {
+        expect(Auto("III")).toEqual("0,0E");
+    });
 });

@@ -1,10 +1,11 @@
 function Auto(cadena)
 {
+    const cardinales=["N","O","S","E"];
     let inicial_x=0;
     let inicial_y=0;
     let final_x=0;
     let final_y=0;
-    let orientacion="N";
+    let orientacion=1;
     const filas = 5;
     const columnas = 5;
     const superficie = [];
@@ -30,10 +31,11 @@ function Auto(cadena)
         }
         if(comandos[i]=="I")
         {
-            orientacion="O";
+            orientacion=(orientacion%4)+1;
         }
+
     }
-    let posicion_final=final_x.toString()+","+final_y.toString()+orientacion;
+    let posicion_final=final_x.toString()+","+final_y.toString()+cardinales[orientacion-1];
     return posicion_final;
 }
 
