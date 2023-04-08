@@ -33,6 +33,16 @@ function Auto(cadena)
         {
             orientacion=(orientacion%4)+1;
         }
+        if(comandos[i]=="D")
+        {
+            const orientaciones=[4,3,2,1];
+            const indice=orientaciones.indexOf(orientacion);
+            if(indice!=-1)
+            {
+                const siguiente_indice=(indice+1)%4;
+                orientacion=orientaciones[siguiente_indice];
+            }
+        }
 
     }
     let posicion_final=final_x.toString()+","+final_y.toString()+cardinales[orientacion-1];
