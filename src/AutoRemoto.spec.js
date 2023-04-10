@@ -37,4 +37,7 @@ describe("•	Ingresar una serie de comandos y que se ejecuten en orden tomando 
     it("deberia combinar los comandos A e I", () => {
         expect(Auto("AIA")).toEqual("0,1O");
     });
+    it("deberia combinar los comandos A y D", () => {
+        expect(Auto("ADA")).toEqual("1,1E");
+    });
 });

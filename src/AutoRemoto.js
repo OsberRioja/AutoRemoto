@@ -32,6 +32,11 @@ function Auto(cadena)
                 final_x=final_x-1;                     //avanza una posicion el auto
                 superficie[final_x][final_y]=1;//pone en 1 la posicion actual del auto
             }
+            if(orientacion == 4 ){
+                superficie[final_x][final_y]=0;//pone en 0 la posicion anterior del auto
+                final_x=final_x+1;                     //avanza una posicion el auto
+                superficie[final_x][final_y]=1;//pone en 1 la posicion actual del auto
+            }
         
         }
         if(comandos[i]=="I")
