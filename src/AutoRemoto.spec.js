@@ -40,4 +40,10 @@ describe("•	Ingresar una serie de comandos y que se ejecuten en orden tomando 
     it("deberia combinar los comandos A y D", () => {
         expect(Auto("ADA")).toEqual("1,1E");
     });
+    it("deberia combinar los comandos DADA y no salir del limite", () => {
+        expect(Auto("DADA")).toEqual("1,0S");
+    });
+    it("deberia combinar los comandos DADA y no salir del limite", () => {
+        expect(Auto("DAAAAA")).toEqual("4,0E");
+    });
 });
