@@ -52,5 +52,11 @@ describe("Ingresar la Posicion Inicial del Auto", () => {
     it("se debe poder ingresar la posicion inicial para X", () => {
         expect(Auto("0/AIA")).toEqual("0,1O");
     });
+    it("se debe poder ingresar la posicion inicial para X y para Y", () => {
+        expect(Auto("0,0/ADAI")).toEqual("1,1N");
+    });
+    it("se debe poder ingresar la posicion inicial para X y para Y y la orientacion inicial (N,S,E,O)", () => {
+        expect(Auto("1,2N/ADAI")).toEqual("2,3N");
+    });
 });
 

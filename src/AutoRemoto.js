@@ -32,29 +32,67 @@ function Auto(cadena)
 {
     var inicial_y;
     var inicial_x;
+    var orientacion=-1;
     var comandos;
     const cardinales=["N","O","S","E"];
     const filas = 5;
     const columnas = 5;
     let entrada=cadena.split("/");
-    var final_x=0;
-    var final_y=0;
+    var final_x;
+    var final_y;
     if(entrada.length>=2)
     {
-        let x=entrada[0];
-        let letras=entrada[1];
-        comandos=letras.split("");
-        inicial_y=0;
-        inicial_x=parseInt(x);    
+        let pos_x;
+        let pos_y;
+        let posicion_inicial=entrada[0].split(/,|(?=[NSOE])/); //expresion regular para obtener ["posx","posy","orientacion"]
+        if(posicion_inicial.length==1)
+        {
+            pos_x=parseInt(posicion_inicial[0]);
+            inicial_y=0;
+            inicial_x=pos_x;
+            let letras=entrada[1];
+            comandos=letras.split("");
+            orientacion=1;
+        }
+        if(posicion_inicial.length==2)
+        {
+            pos_x=posicion_inicial[0];
+            pos_y=posicion_inicial[1];
+            let letras=entrada[1];
+            comandos=letras.split("");
+            inicial_x=parseInt(pos_x);
+            inicial_y=parseInt(pos_y);
+            orientacion=1;
+        }
+        if(posicion_inicial.length>2)
+        {
+            pos_x=posicion_inicial[0];
+            pos_y=posicion_inicial[1];
+            let letras=entrada[1];
+            comandos=letras.split("");
+            inicial_x=parseInt(pos_x);
+            inicial_y=parseInt(pos_y);
+            let cardinal=posicion_inicial[2];//guarda la letra de posciion inicial para buscarla en el verctor cardinales
+            for(var i=0;i<4;i++)
+            {
+                if(cardinales[i]==cardinal)
+                {
+                    orientacion=i+1;
+                }
+            }
+        }
+        
     }else if(entrada.length==1)
     {
         inicial_x=0;
         inicial_y=0;
         comandos=cadena.split("");
+        orientacion=1;
     }
+    final_x=inicial_x;
+    final_y=inicial_y;
     let superficie=CrearSuperficie(filas,columnas);
-    let orientacion=1;
-    superficie[inicial_x][inicial_y]=1;//posicion inicial por defecto
+    superficie[inicial_x][inicial_y]=1;//posicion inicial
     for(var i=0;i<comandos.length;i++)
     {   if(comandos[i]=="A")
         {
