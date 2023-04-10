@@ -47,3 +47,10 @@ describe("•	Ingresar una serie de comandos y que se ejecuten en orden tomando 
         expect(Auto("DAAAAA")).toEqual("4,0E");
     });
 });
+
+describe("Ingresar la Posicion Inicial del Auto", () => {
+    it("se debe poder ingresar la posicion inicial para X", () => {
+        expect(Auto("0/AIA")).toEqual("0,1O");
+    });
+});
+
