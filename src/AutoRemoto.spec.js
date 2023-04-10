@@ -32,3 +32,9 @@ describe("Girar a la Izquierda o a la Derecha el auto con los comandos I o D", (
         expect(Auto("DDDDDD")).toEqual("0,0S");
     });
 });
+
+describe("•	Ingresar una serie de comandos y que se ejecuten en orden tomando en cuenta una posición inicial por defecto (0,0) N y un tamaño de la superficie de 5,5", () => {
+    it("deberia combinar los comandos A e I", () => {
+        expect(Auto("AIA")).toEqual("0,1O");
+    });
+});

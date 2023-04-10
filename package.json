@@ -19,6 +19,7 @@
     "babel-jest": "^27.4.6",
     "cypress": "^10.11.0",
     "jest": "^27.4.7",
-    "parcel": "^2.2.0"
+    "parcel": "^2.2.0",
+    "parcel-bundler": "^1.12.5"
   }
 }
