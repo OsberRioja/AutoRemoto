@@ -30,18 +30,17 @@ function CrearSuperficie(filas,columnas)
 
 function Auto(cadena)
 {
+    let comandos=cadena.split("");
     const cardinales=["N","O","S","E"];
-    let inicial_x=0;
     let inicial_y=0;
+    let inicial_x=0;
     let final_x=0;
     let final_y=0;
     let orientacion=1;
     const filas = 5;
     const columnas = 5;
     let superficie=CrearSuperficie(filas,columnas);
-    
     superficie[inicial_x][inicial_y]=1;//posicion inicial por defecto
-    let comandos=cadena.split("");
     for(var i=0;i<comandos.length;i++)
     {   if(comandos[i]=="A")
         {
