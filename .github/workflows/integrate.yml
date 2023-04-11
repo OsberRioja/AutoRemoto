@@ -24,9 +24,9 @@ jobs:
        # with:
         #  start: npm start
          # wait-on: "http://localhost:1234"
-      - #name: Build for deploy
+      #- name: Build for deploy
         #run: npm run build
-      - #name: Deploy to GitHub Pages
+      #- name: Deploy to GitHub Pages
         #if: success()
         #uses: crazy-max/ghaction-github-pages@v2
         #with:
