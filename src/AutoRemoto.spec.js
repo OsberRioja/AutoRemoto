@@ -46,6 +46,9 @@ describe("•	Ingresar una serie de comandos y que se ejecuten en orden tomando 
     it("deberia combinar los comandos DADA y no salir del limite", () => {
         expect(Auto("DAAAAA")).toEqual("4,0E");
     });
+    it("deberia combinar los comandos DADA y no salir del limite", () => {
+        expect(Auto("ADAAIAIAIA")).toEqual("1,1S");
+    });
 });
 
 describe("Ingresar la Posicion Inicial del Auto", () => {
@@ -57,6 +60,31 @@ describe("Ingresar la Posicion Inicial del Auto", () => {
     });
     it("se debe poder ingresar la posicion inicial para X y para Y y la orientacion inicial (N,S,E,O)", () => {
         expect(Auto("1,2N/ADAI")).toEqual("2,3N");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     });
 });
 
