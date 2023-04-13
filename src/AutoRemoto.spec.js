@@ -77,6 +77,9 @@ describe("ingresar el comando J (jump) para avanzar 2 posiciones al revez", () =
     it("Reconoce el comando J y Avanza 2 posiciones con el comando", () => {
         expect(Auto("5,5/0,0N/J")).toEqual("0,2N");
     });
+    it("No se permite hacer el jump si se sale de la superficie con ese comando", () => {
+        expect(Auto("5,5/0,0N/JAJ")).toEqual("0,3N");
+    });
 });
 
 

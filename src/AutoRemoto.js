@@ -1,18 +1,26 @@
 function Avanzar(orientacion,pasos,final_x,final_y,filas,columnas)
 {
-    if(orientacion == 1 && final_y < columnas-1){
-        final_y=final_y+pasos;                     //avanza una posicion el auto
+    let pos_x=final_x;
+    let pos_y=final_y;
+    if(orientacion == 1){
+        pos_y=pos_y+pasos;                     //avanza una posicion el auto
     }
-    if(orientacion == 2 && final_x > 0 ){
-        final_x=final_x-pasos;                     //avanza una posicion el auto
+    if(orientacion == 2){
+        pos_x=pos_x-pasos;                     //avanza una posicion el auto
     }
-    if(orientacion == 3 && final_y>0){
-        final_y=final_y-pasos;                    //avanza una posicion el auto
+    if(orientacion == 3){
+        pos_y=pos_y-pasos;                    //avanza una posicion el auto
     }
-    if(orientacion == 4 && final_x<filas-1){
-        final_x=final_x+pasos;                //avanza una posicion el auto
+    if(orientacion == 4){
+        pos_x=pos_x+pasos;                //avanza una posicion el auto
     }
-    return [final_x,final_y];
+    if((pos_x>=0 && pos_x<filas) && (pos_y>=0 && pos_y<columnas))
+    {
+        return [pos_x,pos_y];
+    }
+    else{
+        return [final_x,final_y];
+    }
 }
 
 function GirarDerecha(orientacion)
