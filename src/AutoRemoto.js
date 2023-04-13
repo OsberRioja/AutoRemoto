@@ -66,7 +66,6 @@ function Auto(cadena)
                 }
             }
         }
-        
     }else if(entrada.length==1)
     {
         inicial_x=0;
