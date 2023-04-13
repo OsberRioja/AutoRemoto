@@ -35,11 +35,20 @@ function Auto(cadena)
     var orientacion=-1;
     var comandos;
     const cardinales=["N","O","S","E"];
-    const filas = 5;
-    const columnas = 5;
+    var filas;
+    var columnas;
     let entrada=cadena.split("/");
     var final_x;
     var final_y;
+    if(entrada.length==1)
+    {
+        inicial_x=0;
+        inicial_y=0;
+        filas=5;
+        columnas=5;
+        comandos=cadena.split("");
+        orientacion=1;
+    }
     if(entrada.length==2)
     {
         let pos_x;
@@ -51,6 +60,8 @@ function Auto(cadena)
         }
         if(posicion_inicial.length>2)
         {
+            filas=5;
+            columnas=5;
             pos_x=posicion_inicial[0];
             pos_y=posicion_inicial[1];
             let letras=entrada[1];
@@ -66,12 +77,40 @@ function Auto(cadena)
                 }
             }
         }
-    }else if(entrada.length==1)
+    }
+    if(entrada.length==3)
     {
-        inicial_x=0;
-        inicial_y=0;
-        comandos=cadena.split("");
-        orientacion=1;
+        let pos_x;
+        let pos_y;
+        let cantidad_filas;
+        let cantidad_columnas;
+        let posicion_inicial=entrada[1].split(/,|(?=[NSOE])/);
+        let tamanio=entrada[0].split(",");
+        cantidad_filas=tamanio[0];
+        cantidad_columnas=tamanio[1];
+        filas=parseInt(cantidad_filas);
+        columnas=parseInt(cantidad_columnas);
+        if(posicion_inicial.length<=2)
+        {
+            return "Error en los parametros";
+        }
+        if(posicion_inicial.length>2)
+        {
+            pos_x=posicion_inicial[0];
+            pos_y=posicion_inicial[1];
+            let letras=entrada[2];
+            comandos=letras.split("");
+            inicial_x=parseInt(pos_x);
+            inicial_y=parseInt(pos_y);
+            let cardinal=posicion_inicial[2];//guarda la letra de posciion inicial para buscarla en el verctor cardinales
+            for(var i=0;i<4;i++)
+            {
+                if(cardinales[i]==cardinal)
+                {
+                    orientacion=i+1;
+                }
+            }
+        }
     }
     final_x=inicial_x;
     final_y=inicial_y;

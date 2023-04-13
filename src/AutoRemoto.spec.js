@@ -60,31 +60,13 @@ describe("Ingresar la Posicion Inicial del Auto", () => {
     });
     it("se debe poder ingresar la posicion inicial para X y para Y y la orientacion inicial (N,S,E,O)", () => {
         expect(Auto("1,2N/ADAI")).toEqual("2,3N");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     });
 });
+describe("Ingresar un tamaño para la superficie", () => {
+    it("se debe poder ingresar el tamaño de la superficie", () => {
+        expect(Auto("5,5/1,2N/IAIAIAIAA")).toEqual("1,3N");
+    });
+    
+});
+
 
