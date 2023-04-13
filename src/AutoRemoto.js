@@ -40,19 +40,14 @@ function Auto(cadena)
     let entrada=cadena.split("/");
     var final_x;
     var final_y;
-    if(entrada.length>=2)
+    if(entrada.length==2)
     {
         let pos_x;
         let pos_y;
         let posicion_inicial=entrada[0].split(/,|(?=[NSOE])/); //expresion regular para obtener ["posx","posy","orientacion"]
         if(posicion_inicial.length==1)
         {
-            pos_x=parseInt(posicion_inicial[0]);
-            inicial_y=0;
-            inicial_x=pos_x;
-            let letras=entrada[1];
-            comandos=letras.split("");
-            orientacion=1;
+            return "Error en los parametros";
         }
         if(posicion_inicial.length==2)
         {

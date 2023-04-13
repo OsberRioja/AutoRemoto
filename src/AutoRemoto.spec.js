@@ -1,4 +1,4 @@
-import Auto from "./AutoRemoto.js";
+import Auto, { ValueError } from "./AutoRemoto.js";
 
 describe("Avanzar una posicion con el comando A desde una posicion inicial por defecto (0,0)N y una tamaño de supericie por defecto (5,5)", () => {
     it("Si el piloto no ingresa una cadena vacia se devuelve la posicion inicial sin cabios", () => {
@@ -53,10 +53,10 @@ describe("•	Ingresar una serie de comandos y que se ejecuten en orden tomando 
 
 describe("Ingresar la Posicion Inicial del Auto", () => {
     it("se debe poder ingresar la posicion inicial para X", () => {
-        expect(Auto("0/AIA")).toEqual("0,1O");
+        expect(Auto("0/AIA")).toEqual("Error en los parametros");
     });
     it("se debe poder ingresar la posicion inicial para X y para Y", () => {
-        expect(Auto("0,0/ADAI")).toEqual("1,1N");
+        expect(Auto("0,0/ADAI")).toThrow(ValueError);
     });
     it("se debe poder ingresar la posicion inicial para X y para Y y la orientacion inicial (N,S,E,O)", () => {
         expect(Auto("1,2N/ADAI")).toEqual("2,3N");
