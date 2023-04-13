@@ -159,6 +159,14 @@ function Auto(cadena)
             final_y=final_xy[1];
             superficie[final_x][final_y]=1;
         }
+        if(comandos[i]=="J")
+        {
+            superficie[final_x][final_y]=0;
+            let final_xy=Avanzar(orientacion,2,final_x,final_y,filas,columnas);
+            final_x=final_xy[0];
+            final_y=final_xy[1];
+            superficie[final_x][final_y]=1;
+        }
         if(comandos[i]=="I")
         {
             orientacion=GirarIzquierda(orientacion);
