@@ -56,7 +56,7 @@ describe("Ingresar la Posicion Inicial del Auto", () => {
         expect(Auto("0/AIA")).toEqual("Error en los parametros");
     });
     it("se debe poder ingresar la posicion inicial para X y para Y", () => {
-        expect(Auto("0,0/ADAI")).toThrow(ValueError);
+        expect(Auto("0,0/ADAI")).toEqual("Error en los parametros");
     });
     it("se debe poder ingresar la posicion inicial para X y para Y y la orientacion inicial (N,S,E,O)", () => {
         expect(Auto("1,2N/ADAI")).toEqual("2,3N");
