@@ -74,4 +74,10 @@ describe("Ingresar un tamaño para la superficie", () => {
     });
 });
 
+describe("Cuando se ingrese el comando J se avanza dos posiciones", () => {
+    it("ingresando el comando J deberia avanzar dos posiciones", () => {
+        expect(Auto("5,5/0,0N/J")).toEqual("0,2N");
+    });
+});
+
 
