@@ -35,16 +35,16 @@ describe("Girar a la Izquierda o a la Derecha el auto con los comandos I o D", (
 
 describe("•	Ingresar una serie de comandos y que se ejecuten en orden tomando en cuenta una posición inicial por defecto (0,0) N y un tamaño de la superficie de 5,5", () => {
     it("deberia combinar los comandos A e I", () => {
-        expect(Auto("AIA")).toEqual("0,1O");
+        expect(Auto("AIA")).toEqual("4,1O");
     });
     it("deberia combinar los comandos A y D", () => {
         expect(Auto("ADA")).toEqual("1,1E");
     });
-    it("deberia combinar los comandos DADA y no salir del limite", () => {
-        expect(Auto("DADA")).toEqual("1,0S");
+    it("deberia combinar los comandos DADA y dar la vuelta", () => {
+        expect(Auto("DADA")).toEqual("1,4S");
     });
-    it("deberia combinar los comandos DADA y no salir del limite", () => {
-        expect(Auto("DAAAAA")).toEqual("4,0E");
+    it("deberia combinar los comandos DADA y dar la vuelta", () => {
+        expect(Auto("DAAAAA")).toEqual("0,0E");
     });
     it("deberia combinar los comandos DADA y no salir del limite", () => {
         expect(Auto("ADAAIAIAIA")).toEqual("1,1S");
@@ -84,6 +84,12 @@ describe("ingresar el comando J (jump) para avanzar 2 posiciones al revez", () =
 describe("La superficie deja de ser plana y pasa a ser circular", () => {
     it("Si se sale de sobre pasa del limite al Norte vuelve al principio", () => {
         expect(Auto("5,5/0,0N/AAAAA")).toEqual("0,0N");
+    });
+    it("Si se sale de sobre pasa del limite al Sur vuelve al principio", () => {
+        expect(Auto("5,5/0,0N/IIJ")).toEqual("0,3S");
+    });
+    it("Si se sale de sobre pasa del limite al Oeste vuelve al principio", () => {
+        expect(Auto("5,5/0,0N/IJ")).toEqual("3,0O");
     });
 });
 

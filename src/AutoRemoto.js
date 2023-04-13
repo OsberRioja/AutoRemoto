@@ -18,6 +18,18 @@ function Avanzar(orientacion,pasos,final_x,final_y,filas,columnas)
     {
         pos_y=pos_y-columnas;
     }
+    if(pos_y<0)
+    {
+        pos_y=pos_y+columnas;
+    }
+    if(pos_x>=filas)
+    {
+        pos_x=pos_x-filas;
+    }
+    if(pos_x<0)
+    {
+        pos_x=pos_x+filas;
+    }
     if((pos_x>=0 && pos_x<filas) && (pos_y>=0 && pos_y<columnas))
     {
         return [pos_x,pos_y];
