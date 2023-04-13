@@ -66,7 +66,9 @@ describe("Ingresar un tamaño para la superficie", () => {
     it("se debe poder ingresar el tamaño de la superficie", () => {
         expect(Auto("5,5/1,2N/IAIAIAIAA")).toEqual("1,3N");
     });
-    
+    it("se puede ingresar la superficie y los comandos y se inicializara con una posicion por defecto", () => {
+        expect(Auto("5,5/ADA")).toEqual("1,1E");
+    });
 });
 
 

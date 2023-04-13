@@ -54,9 +54,26 @@ function Auto(cadena)
         let pos_x;
         let pos_y;
         let posicion_inicial=entrada[0].split(/,|(?=[NSOE])/); //expresion regular para obtener ["posx","posy","orientacion"]
-        if(posicion_inicial.length<=2)
-        {
+        if(posicion_inicial.length<2){
             return "Error en los parametros";
+        }
+        if(posicion_inicial.length==2)
+        {
+            if(parseInt(posicion_inicial[0])>1 && parseInt(posicion_inicial[1])>1){
+                let cantidad_filas=posicion_inicial[0];
+                let cantidad_columnas=posicion_inicial[1];
+                filas=parseInt(cantidad_filas);
+                columnas=parseInt(cantidad_columnas);
+                inicial_x=0;
+                inicial_y=0;
+                orientacion=1;
+                let letras=entrada[1];
+                comandos=letras.split("");
+            }
+            else{
+                return "Error en los parametros";
+            }
+            
         }
         if(posicion_inicial.length>2)
         {
