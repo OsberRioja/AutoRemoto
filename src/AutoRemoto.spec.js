@@ -13,8 +13,8 @@ describe("Avanzar una posicion con el comando A desde una posicion inicial por d
     it("Si se ingresa una secuencia de comandos A se avanzaran las posiciones necesarias.", () => {
         expect(Auto("AAAA")).toEqual("0,4N");
     });
-    it("Si se ingresa una secuencia que sobre pase los limites el auto debe detenerse en el limite", () => {
-        expect(Auto("AAAAAA")).toEqual("0,4N");
+    it("Si se ingresa una secuencia que sobre pase los limites el auto da la vuelta", () => {
+        expect(Auto("AAAAAA")).toEqual("0,1N");
     });
 });
 
@@ -77,11 +77,15 @@ describe("ingresar el comando J (jump) para avanzar 2 posiciones al revez", () =
     it("Reconoce el comando J y Avanza 2 posiciones con el comando", () => {
         expect(Auto("5,5/0,0N/J")).toEqual("0,2N");
     });
-    it("No se permite hacer el jump si se sale de la superficie con ese comando", () => {
-        expect(Auto("5,5/0,0N/JAJ")).toEqual("0,3N");
+    it("si con el comando J sobrepasa los limites el auto da la vuelta", () => {
+        expect(Auto("5,5/0,0N/JAJ")).toEqual("0,0N");
     });
 });
-
+describe("La superficie deja de ser plana y pasa a ser circular", () => {
+    it("Si se sale de sobre pasa del limite al Norte vuelve al principio", () => {
+        expect(Auto("5,5/0,0N/AAAAA")).toEqual("0,0N");
+    });
+});
 
 
 

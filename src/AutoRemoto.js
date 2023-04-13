@@ -14,6 +14,10 @@ function Avanzar(orientacion,pasos,final_x,final_y,filas,columnas)
     if(orientacion == 4){
         pos_x=pos_x+pasos;                //avanza una posicion el auto
     }
+    if(pos_y>=columnas)
+    {
+        pos_y=pos_y-columnas;
+    }
     if((pos_x>=0 && pos_x<filas) && (pos_y>=0 && pos_y<columnas))
     {
         return [pos_x,pos_y];
