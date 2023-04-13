@@ -8,8 +8,9 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const cadena = cadena_comandos.value;
-  const posicion_inicial = "0,0N";
+  const posicion_inicial = cadena.split("/")[1];
+  const comandos=cadena.split("/")[2];
   const posicion_final = Auto(cadena);
 
-  div.innerHTML = "<p> Posicion Inicial:" + posicion_inicial + "</p>" + "<p> Comandos:" + cadena + "</p>" + "<p> Posicion Final:" + posicion_final + "</p>";
+  div.innerHTML = "<p> Posicion Inicial:" + posicion_inicial + "</p>" + "<p> Comandos:" + comandos + "</p>" + "<p> Posicion Final:" + posicion_final + "</p>";
 });
