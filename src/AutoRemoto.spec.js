@@ -69,6 +69,9 @@ describe("Ingresar un tamaño para la superficie", () => {
     it("se puede ingresar la superficie y los comandos y se inicializara con una posicion por defecto", () => {
         expect(Auto("5,5/ADA")).toEqual("1,1E");
     });
+    it("debe devolver error si se pasa una posicion sin orientacion", () => {
+        expect(Auto("5,5/1,2/IAIAIAIAA")).toEqual("Error en los parametros");
+    });
 });
 
 
