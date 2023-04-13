@@ -1,3 +1,20 @@
+function Avanzar(orientacion,pasos,final_x,final_y,filas,columnas)
+{
+    if(orientacion == 1 && final_y < columnas-1){
+        final_y=final_y+pasos;                     //avanza una posicion el auto
+    }
+    if(orientacion == 2 && final_x > 0 ){
+        final_x=final_x-pasos;                     //avanza una posicion el auto
+    }
+    if(orientacion == 3 && final_y>0){
+        final_y=final_y-pasos;                    //avanza una posicion el auto
+    }
+    if(orientacion == 4 && final_x<filas-1){
+        final_x=final_x+pasos;                //avanza una posicion el auto
+    }
+    return [final_x,final_y];
+}
+
 function GirarDerecha(orientacion)
 {
     const orientaciones=[4,3,2,1];
@@ -136,26 +153,11 @@ function Auto(cadena)
     for(var i=0;i<comandos.length;i++)
     {   if(comandos[i]=="A")
         {
-            if(orientacion == 1 && final_y < columnas-1){
-                superficie[final_x][final_y]=0;//pone en 0 la posicion anterior del auto
-                final_y++;                     //avanza una posicion el auto
-                superficie[final_x][final_y]=1;//pone en 1 la posicion actual del auto
-            }
-            if(orientacion == 2 && final_x > 0 ){
-                superficie[final_x][final_y]=0;//pone en 0 la posicion anterior del auto
-                final_x--;                     //avanza una posicion el auto
-                superficie[final_x][final_y]=1;//pone en 1 la posicion actual del auto
-            }
-            if(orientacion == 3 && final_y>0){
-                superficie[final_x][final_y]=0;//pone en 0 la posicion anterior del auto
-                final_y--;                     //avanza una posicion el auto
-                superficie[final_x][final_y]=1;//pone en 1 la posicion actual del auto
-            }
-            if(orientacion == 4 && final_x<filas-1){
-                superficie[final_x][final_y]=0;//pone en 0 la posicion anterior del auto
-                final_x++;                     //avanza una posicion el auto
-                superficie[final_x][final_y]=1;//pone en 1 la posicion actual del auto
-            }
+            superficie[final_x][final_y]=0;
+            let final_xy=Avanzar(orientacion,1,final_x,final_y,filas,columnas);
+            final_x=final_xy[0];
+            final_y=final_xy[1];
+            superficie[final_x][final_y]=1;
         }
         if(comandos[i]=="I")
         {
